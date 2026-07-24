@@ -78,24 +78,14 @@ milwdsh@gmail.com
 
 <script>
 
-        loadSidebar("admin");
+document.addEventListener("DOMContentLoaded", async () => {
 
-    }
+    loadSidebar();
 
-    else if(currentRole==="advertiser"){
-
-        loadSidebar("advertiser");
-
-    }
-
-    else{
-
-        loadSidebar("customer");
-
-    }
-
-document.getElementById("header").innerHTML =
+    document.getElementById("header").innerHTML =
 await header("پشتیبانی");
+
+});
 
 </script>
 
