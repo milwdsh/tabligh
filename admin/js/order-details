@@ -1,0 +1,507 @@
+document.addEventListener("DOMContentLoaded",()=>{
+
+startOrderDetails();
+
+});
+
+
+
+
+async function startOrderDetails(){
+
+
+const {data:{session}} =
+await supabaseClient.auth.getSession();
+
+
+
+if(!session){
+
+window.location.href = ROUTES.login;
+
+return;
+
+}
+
+
+
+const {data:profile,error}=
+
+await supabaseClient
+
+.from("profiles")
+
+.select("role")
+
+.eq("id",session.user.id)
+
+.single();
+
+
+
+
+if(error || !profile || profile.role !== "admin"){
+
+alert("دسترسی ندارید");
+
+window.location.href = ROUTES.dashboard;
+
+return;
+
+}
+
+
+
+
+loadSidebar("admin");
+
+
+
+document.getElementById("header").innerHTML =
+
+header("جزئیات سفارش");
+
+
+
+loadOrderDetails();
+
+
+}
+
+
+
+
+
+
+
+async function loadOrderDetails(){
+
+
+
+const params =
+
+new URLSearchParams(window.location.search);
+
+
+
+const id = params.get("id");
+
+
+
+if(!id){
+
+alert("شناسه سفارش پیدا نشد");
+
+return;
+
+}
+
+
+
+
+const {data:order,error}=
+
+await supabaseClient
+
+.from("orders")
+
+.select(`
+
+*,
+
+advertiser_pages(
+
+page_name,
+
+instagram_id,
+
+followers,
+
+story_views,
+
+reel_views
+
+)
+
+`)
+
+.eq("id",id)
+
+.single();
+
+
+
+
+
+if(error){
+
+alert(error.message);
+
+console.log(error);
+
+return;
+
+}
+
+
+
+
+
+
+
+const {data:customer}=
+
+await supabaseClient
+
+.from("profiles")
+
+.select("name,email")
+
+.eq("id",order.customer_id)
+
+.single();
+
+
+
+
+
+
+
+
+document.getElementById("orderDetails").innerHTML = `
+
+
+
+<div class="cardBox">
+
+
+
+<h2>
+
+📦 سفارش #${order.id.substring(0,8)}
+
+</h2>
+
+
+
+<hr>
+
+
+
+<h3>
+
+👤 مشتری
+
+</h3>
+
+
+
+<p>
+
+نام:
+
+${customer?.name || "-"}
+
+</p>
+
+
+
+<p>
+
+ایمیل:
+
+${customer?.email || "-"}
+
+</p>
+
+
+
+
+<p>
+
+📞 شماره تماس:
+
+${order.customer_phone || "-"}
+
+</p>
+
+
+
+
+<p>
+
+📷 پیج مشتری:
+
+${order.customer_instagram_id || "-"}
+
+</p>
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+📌 پیج تبلیغاتی
+
+</h3>
+
+
+
+<p>
+
+نام پیج:
+
+${order.advertiser_pages?.page_name || "-"}
+
+</p>
+
+
+
+<p>
+
+اینستاگرام:
+
+${order.advertiser_pages?.instagram_id || "-"}
+
+</p>
+
+
+
+<p>
+
+دنبال کننده:
+
+${order.advertiser_pages?.followers || 0}
+
+</p>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+📢 اطلاعات تبلیغ
+
+</h3>
+
+
+
+<p>
+
+نوع تبلیغ:
+
+${order.service_type || "-"}
+
+</p>
+
+
+
+<p>
+
+💰 مبلغ:
+
+${formatPrice(order.price || 0)}
+
+تومان
+
+</p>
+
+
+
+<p>
+
+📅 تاریخ تبلیغ:
+
+${order.publish_date || "-"}
+
+</p>
+
+
+
+<p>
+
+⏰ ساعت پیشنهادی:
+
+${order.publish_time || "-"}
+
+</p>
+
+
+
+
+<p>
+
+📝 توضیحات:
+
+${order.description || "-"}
+
+</p>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+وضعیت
+
+</h3>
+
+
+
+<p>
+
+📋 سفارش:
+
+${orderStatusFa(order.status)}
+
+</p>
+
+
+
+<p>
+
+💳 پرداخت:
+
+${paymentStatusFa(order.payment_status)}
+
+</p>
+
+
+
+
+<p>
+
+🔢 کد پیگیری:
+
+${order.payment_tracking || "-"}
+
+</p>
+
+
+
+<br>
+
+
+
+<a class="btn"
+
+href="admin-orders.html">
+
+⬅ بازگشت
+
+</a>
+
+
+
+</div>
+
+
+
+`;
+
+
+
+}
+
+
+
+
+
+
+
+function orderStatusFa(status){
+
+
+switch(status){
+
+
+case "pending_payment":
+
+return "⏳ در انتظار پرداخت";
+
+
+case "pending":
+
+return "⌛ در انتظار تایید";
+
+
+case "accepted":
+
+return "✅ تایید شده";
+
+
+case "rejected":
+
+return "❌ رد شده";
+
+
+case "completed":
+
+return "🎉 انجام شده";
+
+
+default:
+
+return status || "-";
+
+
+}
+
+}
+
+
+
+
+
+
+
+function paymentStatusFa(status){
+
+
+switch(status){
+
+
+case "unpaid":
+
+return "❌ پرداخت نشده";
+
+
+case "paid":
+
+return "✅ پرداخت شده";
+
+
+case "pending":
+
+return "⏳ در انتظار پرداخت";
+
+
+default:
+
+return status || "-";
+
+
+}
+
+}
