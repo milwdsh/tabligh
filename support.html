@@ -78,6 +78,22 @@ milwdsh@gmail.com
 
 <script>
 
+        loadSidebar("admin");
+
+    }
+
+    else if(currentRole==="advertiser"){
+
+        loadSidebar("advertiser");
+
+    }
+
+    else{
+
+        loadSidebar("customer");
+
+    }
+
 document.getElementById("header").innerHTML =
 await header("پشتیبانی");
 
