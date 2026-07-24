@@ -1,11 +1,13 @@
-loadSidebar("customer");
+document.addEventListener("DOMContentLoaded", async () => {
 
+    loadSidebar();
 
-document.getElementById("header").innerHTML =
-   await header("سفارش‌های من");
+    document.getElementById("header").innerHTML =
+        await header("سفارش‌های من");
 
+    loadCustomerOrders();
 
-loadCustomerOrders();
+});
 
 
 
