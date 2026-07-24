@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ثبت سفارش تبلیغات</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+</head>
+
+<body>
+
+<div id="sidebar"></div>
+
+<div class="content">
+
+<div id="header"></div>
+
+<div class="cardBox">
+
+<h2>ثبت سفارش تبلیغات</h2>
+
+<br>
+
+<div class="infoBox">
+
+<h3>📢 راهنمای ثبت سفارش</h3>
+
+<p>
+لطفاً اطلاعات پیج خود را کامل وارد کنید.
+</p>
+
+<p>
+پس از ثبت سفارش، درخواست شما برای صاحب پیج ارسال می‌شود.
+</p>
+
+<p>
+تاریخ و ساعت وارد شده صرفاً پیشنهادی است.
+</p>
+
+<p>
+شماره تماس جهت هماهنگی استفاده می‌شود.
+</p>
+
+</div>
+
+<br>
+
+<label>آیدی پیج اینستاگرام شما</label>
+
+<input
+id="customerInstagram"
+class="input"
+placeholder="@username">
+
+<br><br>
+
+<label>لینک پیج (اختیاری)</label>
+
+<input
+id="customerLink"
+class="input"
+placeholder="https://instagram.com/...">
+
+<br><br>
+
+<label>تعداد دنبال‌کننده</label>
+
+<input
+id="customerFollowers"
+class="input"
+type="number">
+
+<br><br>
+
+<label>شماره تماس</label>
+
+<input
+id="customerPhone"
+class="input"
+placeholder="09xxxxxxxxx">
+
+<br><br>
+
+<label>نوع تبلیغ</label>
+
+<select
+id="service"
+class="input">
+
+<option value="story">
+استوری
+</option>
+
+<option value="post">
+پست
+</option>
+
+<option value="reel">
+ریلز
+</option>
+
+</select>
+
+<br><br>
+
+<label>تاریخ پیشنهادی تبلیغ (شمسی)</label>
+
+<input
+id="publishDate"
+class="input"
+placeholder="1405/05/20">
+
+<br><br>
+
+<label>ساعت پیشنهادی</label>
+
+<input
+id="publishTime"
+class="input"
+type="time">
+
+<br><br>
+
+<label>توضیحات سفارش</label>
+
+<textarea
+id="customerNote"
+class="input"
+rows="5"
+placeholder="توضیحات مورد نیاز..."></textarea>
+
+<br><br>
+
+<h3>
+
+مبلغ سفارش:
+
+<span id="priceBox">
+
+---
+
+</span>
+
+تومان
+
+</h3>
+
+<br>
+
+<button
+class="btn"
+onclick="submitOrder()">
+
+ثبت سفارش
+
+</button>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/routes.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/utils.js"></script>
+
+<script src="js/order.js"></script>
+
+</body>
+
+</html>
