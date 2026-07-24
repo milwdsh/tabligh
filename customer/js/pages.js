@@ -1,12 +1,13 @@
-loadSidebar();
+document.addEventListener("DOMContentLoaded", async () => {
 
+    loadSidebar();
 
-document.getElementById("header").innerHTML =
- await header("پیج‌های تبلیغاتی");
+    document.getElementById("header").innerHTML =
+        await header("پیج‌های تبلیغاتی");
 
+    loadPages();
 
-loadPages();
-
+});
 
 
 async function loadPages(){
