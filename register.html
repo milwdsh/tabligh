@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ثبت نام | تبلیغینو</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+    font-family:"Vazirmatn",sans-serif;
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+    padding:0;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top right,#4f46e5 0%,transparent 35%),
+    radial-gradient(circle at bottom left,#06b6d4 0%,transparent 30%),
+    linear-gradient(135deg,#0f172a,#1e293b);
+
+}
+
+.loginPage{
+
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+
+}
+
+.loginBox{
+
+    width:100%;
+    max-width:430px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.35);
+
+    animation:fadeIn .5s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:none;
+
+}
+
+}
+
+.logo{
+
+width:80px;
+height:80px;
+
+margin:auto;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#4f46e5,#06b6d4);
+
+color:#fff;
+
+font-size:34px;
+
+margin-bottom:20px;
+
+}
+
+.loginBox h1{
+
+margin:0;
+text-align:center;
+color:#fff;
+
+}
+
+.loginBox p{
+
+text-align:center;
+color:#cbd5e1;
+
+margin-top:10px;
+margin-bottom:30px;
+
+}
+
+.inputGroup{
+
+position:relative;
+margin-bottom:18px;
+
+}
+
+.inputGroup i:first-child{
+
+position:absolute;
+
+right:18px;
+top:50%;
+
+transform:translateY(-50%);
+
+color:#94a3b8;
+
+}
+
+.inputGroup input,
+.inputGroup select{
+
+width:100%;
+
+padding:14px 50px;
+
+border:none;
+outline:none;
+
+border-radius:15px;
+
+background:#ffffff10;
+
+color:#fff;
+
+font-size:15px;
+
+}
+
+.inputGroup select{
+
+appearance:none;
+cursor:pointer;
+
+}
+
+.inputGroup input::placeholder{
+
+color:#cbd5e1;
+
+}
+
+.togglePassword{
+
+position:absolute;
+
+left:18px;
+top:50%;
+
+transform:translateY(-50%);
+
+cursor:pointer;
+
+color:#cbd5e1;
+
+}
+
+#registerBtn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:15px;
+
+background:linear-gradient(135deg,#4f46e5,#06b6d4);
+
+color:#fff;
+
+font-size:16px;
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+#registerBtn:hover{
+
+transform:translateY(-2px);
+
+}
+
+.extraLinks{
+
+margin-top:20px;
+text-align:center;
+
+}
+
+.extraLinks a{
+
+color:#e2e8f0;
+text-decoration:none;
+font-size:14px;
+
+}
+
+.extraLinks a:hover{
+
+color:#38bdf8;
+
+}
+
+.features{
+
+margin-top:30px;
+
+padding-top:20px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.feature{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+margin:10px 0;
+
+color:#e2e8f0;
+
+}
+
+.feature i{
+
+color:#22c55e;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="loginPage">
+
+<div class="loginBox">
+
+<div class="logo">
+
+<i class="fa-solid fa-user-plus"></i>
+
+</div>
+
+<h1>
+
+ثبت نام
+
+</h1>
+
+<p>
+
+حساب کاربری جدید ایجاد کنید
+
+</p>
+
+<div class="inputGroup">
+
+<i class="fa-solid fa-user"></i>
+
+<input
+type="text"
+id="name"
+placeholder="نام و نام خانوادگی">
+
+</div>
+
+<div class="inputGroup">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input
+type="email"
+id="email"
+placeholder="ایمیل">
+
+</div>
+
+<div class="inputGroup">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="password"
+placeholder="رمز عبور">
+
+<i
+class="fa-solid fa-eye togglePassword"
+onclick="togglePassword()">
+
+</i>
+
+</div>
+
+<div class="inputGroup">
+
+<i class="fa-solid fa-users"></i>
+
+<select id="role">
+
+<option value="customer">
+
+👤 مشتری
+
+</option>
+
+<option value="advertiser">
+
+📢 صاحب پیج تبلیغاتی
+
+</option>
+
+</select>
+
+</div>
+
+<button
+id="registerBtn">
+
+ثبت نام
+
+</button>
+
+<div class="extraLinks">
+
+<a href="login.html">
+
+قبلاً ثبت نام کرده‌اید؟ ورود
+
+</a>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+
+<i class="fa-solid fa-circle-check"></i>
+
+ثبت سفارش تبلیغات
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-circle-check"></i>
+
+درآمد از تبلیغات
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-circle-check"></i>
+
+امن و سریع
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+    const input=document.getElementById("password");
+    const eye=document.querySelector(".togglePassword");
+
+    if(input.type==="password"){
+
+        input.type="text";
+
+        eye.classList.remove("fa-eye");
+        eye.classList.add("fa-eye-slash");
+
+    }else{
+
+        input.type="password";
+
+        eye.classList.remove("fa-eye-slash");
+        eye.classList.add("fa-eye");
+
+    }
+
+}
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="assets/js/supabase.js"></script>
+
+<script src="assets/js/register.js"></script>
+
+</body>
+</html>
