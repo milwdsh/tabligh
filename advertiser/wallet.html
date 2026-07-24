@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>کیف پول</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+<div id="sidebar"></div>
+
+
+<main class="content">
+
+
+<div id="header"></div>
+
+
+
+<div class="dashboardCards">
+
+
+
+<div class="cardBox">
+
+
+<h2>
+💰 کیف پول
+</h2>
+
+
+<div id="walletBalance">
+
+در حال دریافت...
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="cardBox">
+
+
+<h2>
+💸 درخواست تسویه
+</h2>
+
+
+
+<input 
+id="withdrawAmount"
+type="number"
+placeholder="مبلغ تسویه">
+
+
+
+<input 
+id="cardName"
+type="text"
+placeholder="نام صاحب حساب">
+
+
+
+<input 
+id="cardNumber"
+type="text"
+placeholder="شماره کارت">
+
+
+
+
+
+<button class="btn" onclick="submitWithdraw()">
+
+ثبت درخواست تسویه
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="cardBox">
+
+
+<h2>
+📄 تراکنش‌ها
+</h2>
+
+
+
+<div id="transactionsBox">
+
+
+در حال دریافت...
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+
+<script src="../assets/js/routes.js"></script>
+
+<script src="../assets/js/components.js"></script>
+
+<script src="../assets/js/utils.js"></script>
+
+
+<script src="js/wallet.js"></script>
+
+
+
+</body>
+
+</html>
