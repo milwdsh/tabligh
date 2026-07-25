@@ -338,6 +338,15 @@ menu += `
 menu += `
 
 
+<a href="${link("profile.html")}">
+
+<i class="fa-solid fa-user-circle"></i>
+
+پروفایل
+
+</a>
+
+
 <a href="${link("support.html")}">
 
 <i class="fa fa-headset"></i>
