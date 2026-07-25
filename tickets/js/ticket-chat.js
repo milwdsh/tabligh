@@ -163,8 +163,11 @@ async function loadTicketInfo(){
 
     }
 
-
-
+ticketStatusValue = ticket.status;
+if(ticket.status === "closed"){
+    document.getElementById("messageText").disabled = true;
+    document.querySelector(".sendBtn").disabled = true;
+}
 
 
     document.getElementById("ticketInfo").innerHTML=`
@@ -390,7 +393,10 @@ async function loadMessages(){
 
 async function sendMessage(){
 
-
+if(ticketStatusValue === "closed"){
+    alert("این تیکت بسته شده است.");
+    return;
+}
 
     const text =
 
