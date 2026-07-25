@@ -359,17 +359,6 @@ menu += `
 
 
 
-<a href="${link("contact.html")}">
-
-<i class="fa fa-phone"></i>
-
-تماس با ما
-
-</a>
-
-
-
-
 
 <a href="${link("index.html")}" onclick="logout()">
 
