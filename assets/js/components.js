@@ -371,7 +371,7 @@ menu += `
 
 
 
-<a href="${link("login.html")}" onclick="logout()">
+<a href="${link("index.html")}" onclick="logout()">
 
 <i class="fa fa-sign-out"></i>
 
