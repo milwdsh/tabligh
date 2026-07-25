@@ -395,7 +395,7 @@ async function loadAdvertiserTicket(userId){
 
     .select("id,ticket_number")
 
-    .eq("user_id",userId);
+    .eq("user_id",userId)
 
     .eq("status","open");
 
