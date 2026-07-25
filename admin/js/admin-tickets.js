@@ -262,7 +262,13 @@ async function loadAdminTickets(){
 
         </button>
 
-
+${ticket.status==="open" ? `
+<button
+class="btn dangerBtn"
+onclick="closeTicket('${ticket.id}')">
+🔒 بستن تیکت
+</button>
+` : ""}
 
         </div>
 
@@ -325,3 +331,29 @@ function openAdminTicket(id){
 
 
 window.openAdminTicket=openAdminTicket;
+
+async function closeTicket(id){
+
+    if(!confirm("آیا از بستن این تیکت مطمئن هستید؟")){
+        return;
+    }
+
+    const {error} = await supabaseClient
+    .from("tickets")
+    .update({
+        status:"closed"
+    })
+    .eq("id",id);
+
+    if(error){
+        alert("خطا در بستن تیکت");
+        console.log(error);
+        return;
+    }
+
+    alert("تیکت بسته شد.");
+    loadAdminTickets();
+
+}
+
+window.closeTicket = closeTicket;
