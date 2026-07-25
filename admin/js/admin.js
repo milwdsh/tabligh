@@ -250,6 +250,7 @@ await supabaseClient
 .select("id,ticket_number")
 .order("created_at",{ascending:false});
 
+.eq("status","open");
 
 
 
