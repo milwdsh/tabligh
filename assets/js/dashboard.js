@@ -354,6 +354,7 @@ async function loadTicketNotice(userId){
 
     .eq("user_id",userId);
 
+    .eq("status","open");
 
 
 
