@@ -439,13 +439,13 @@ async function header(title){
 
         <h2>${title}</h2>
 
-        <div class="userInfo">
+<div class="userInfo" onclick="window.location.href=link('profile.html')">
 
-            <i class="fa-solid fa-user-circle"></i>
+    <i class="fa-solid fa-user-circle"></i>
 
-            <span>${name}</span>
+    <span>${name}</span>
 
-        </div>
+</div>
 
     </header>
 
