@@ -397,7 +397,7 @@ async function loadAdvertiserTicket(userId){
 
     .eq("user_id",userId);
 
-
+    .eq("status","open");
 
 
 
