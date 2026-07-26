@@ -9,7 +9,7 @@
 
 <title>گفتگوی سفارش | تبلیغینو</title>
 
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style2.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -31,31 +31,48 @@
 
         <div id="header"></div>
 
-        <div id="chatInfo"></div>
+        <section class="dashboardSection">
 
-        <div id="messages" class="messages"></div>
+            <div id="chatInfo"></div>
 
-<div id="sendBox" class="cardBox">
+        </section>
 
-    <textarea
-    id="messageText"
-    class="input"
-    rows="3"
-    placeholder="پیام خود را بنویسید..."></textarea>
+        <section class="dashboardSection">
 
-    <br>
+            <div id="messages" class="chatMessages"></div>
 
-    <button
-    class="btn"
-    onclick="sendMessage()">
+        </section>
 
-        <i class="fa-solid fa-paper-plane"></i>
+        <section class="dashboardSection">
 
-        ارسال پیام
+            <div id="sendBox" class="cardBox">
 
-    </button>
+                <h3 style="margin-bottom:18px;">
+                    ارسال پیام
+                </h3>
 
-</div>
+                <div class="inputGroup">
+
+                    <textarea
+                    id="messageText"
+                    rows="4"
+                    placeholder="پیام خود را بنویسید..."></textarea>
+
+                </div>
+
+                <button
+                class="primaryBtn"
+                onclick="sendMessage()">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    ارسال پیام
+
+                </button>
+
+            </div>
+
+        </section>
 
     </main>
 
