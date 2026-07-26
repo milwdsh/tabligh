@@ -72,6 +72,9 @@ async function loadProfile() {
     document.getElementById("phone").value =
     data.phone || "";
 
+
+document.getElementById("username").value =
+data.username || "";
     document.getElementById("role").value =
     getRoleName(data.role);
 
@@ -85,44 +88,69 @@ async function saveProfile() {
     const name =
     document.getElementById("name").value.trim();
 
-    const email =
-    document.getElementById("email").value.trim();
-
     const phone =
     document.getElementById("phone").value.trim();
 
-    const { data: { user } } =
+    const username =
+    document.getElementById("username").value
+    .trim()
+    .toLowerCase();
+
+    if(username){
+
+        if(!/^[a-z0-9_]{4,20}$/.test(username)){
+
+            alert("آیدی باید بین ۴ تا ۲۰ کاراکتر و فقط شامل حروف انگلیسی، عدد و _ باشد.");
+
+            return;
+
+        }
+
+    }
+
+    const { data:{ user } } =
     await supabaseClient.auth.getUser();
 
-    const { error } =
+    const { data: existUser } =
     await supabaseClient
-    .from("profiles")
-    .update({
 
-        name,
-        email,
-        phone
+        .from("profiles")
 
-    })
-    .eq("id", user.id);
+        .select("id")
 
-    if (error) {
+        .eq("username",username)
 
-        alert(error.message);
+        .maybeSingle();
+
+    if(existUser && existUser.id !== user.id){
+
+        alert("این آیدی قبلاً انتخاب شده است.");
+
         return;
 
     }
 
-    const { error: authError } =
-    await supabaseClient.auth.updateUser({
+    const { error } =
+    await supabaseClient
 
-        email
+        .from("profiles")
 
-    });
+        .update({
 
-    if (authError) {
+            name,
 
-        alert(authError.message);
+            phone,
+
+            username
+
+        })
+
+        .eq("id",user.id);
+
+    if(error){
+
+        alert(error.message);
+
         return;
 
     }
