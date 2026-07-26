@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-
-
 async function loadCustomerOrders(){
 
 
