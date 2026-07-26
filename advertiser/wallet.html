@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>کیف پول | تبلیغینو</title>
+
+<link rel="stylesheet" href="../assets/css/style2.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div id="sidebar"></div>
+
+    <main class="content">
+
+        <div id="header"></div>
+
+        <section class="dashboardSection">
+
+            <div class="card">
+
+                <h2 class="cardTitle">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    کیف پول
+
+                </h2>
+
+                <div id="walletBalance">
+
+                    <div class="loader"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="dashboardSection">
+
+            <div class="card">
+
+                <h2 class="cardTitle">
+
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+
+                    درخواست تسویه
+
+                </h2>
+
+                <div class="inputGroup">
+
+                    <label>مبلغ تسویه</label>
+
+                    <input
+                    id="withdrawAmount"
+                    type="number"
+                    placeholder="مبلغ تسویه">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>نام صاحب حساب</label>
+
+                    <input
+                    id="cardName"
+                    type="text"
+                    placeholder="نام صاحب حساب">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>شماره کارت</label>
+
+                    <input
+                    id="cardNumber"
+                    type="text"
+                    placeholder="شماره کارت">
+
+                </div>
+
+                <button
+                class="primaryBtn"
+                onclick="submitWithdraw()">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    ثبت درخواست تسویه
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="dashboardSection">
+
+            <div class="card">
+
+                <h2 class="cardTitle">
+
+                    <i class="fa-solid fa-receipt"></i>
+
+                    تراکنش‌ها
+
+                </h2>
+
+                <div id="transactionsBox">
+
+                    <div class="loader"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+
+<script src="../assets/js/routes.js"></script>
+
+<script src="../assets/js/components.js"></script>
+
+<script src="../assets/js/utils.js"></script>
+
+<script src="js/wallet.js"></script>
+
+</body>
+
+</html>

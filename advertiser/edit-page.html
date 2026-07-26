@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>ویرایش پیج | تبلیغینو</title>
+
+<link rel="stylesheet" href="../assets/css/style2.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div id="sidebar"></div>
+
+    <main class="content">
+
+        <div id="header"></div>
+
+        <div class="card">
+
+            <h2 class="cardTitle">
+
+                ویرایش اطلاعات پیج
+
+            </h2>
+
+            <div class="textCenter mb30">
+
+                <img id="preview" class="profileImage" src="">
+
+            </div>
+
+            <div class="cardGrid">
+
+                <div class="inputGroup">
+                    <label>نام پیج</label>
+                    <input id="page_name">
+                </div>
+
+                <div class="inputGroup">
+                    <label>آیدی اینستاگرام</label>
+                    <input id="instagram_id">
+                </div>
+
+                <div class="inputGroup">
+                    <label>دسته‌بندی</label>
+                    <input id="category">
+                </div>
+
+                <div class="inputGroup">
+                    <label>تعداد فالوور</label>
+                    <input id="followers" type="number">
+                </div>
+
+                <div class="inputGroup">
+                    <label>بازدید استوری</label>
+                    <input id="story_views" type="number">
+                </div>
+
+                <div class="inputGroup">
+                    <label>بازدید ریلز</label>
+                    <input id="reel_views" type="number">
+                </div>
+
+                <div class="inputGroup">
+                    <label>قیمت استوری</label>
+                    <input id="story_price" type="number">
+                </div>
+
+                <div class="inputGroup">
+                    <label>قیمت پست</label>
+                    <input id="post_price" type="number">
+                </div>
+
+                <div class="inputGroup">
+                    <label>قیمت ریلز</label>
+                    <input id="reel_price" type="number">
+                </div>
+
+                <div class="inputGroup">
+                    <label>لینک عکس پروفایل</label>
+                    <input id="profile_image">
+                </div>
+
+            </div>
+
+            <div class="inputGroup mt20">
+
+                <label>بیو</label>
+
+                <textarea id="bio"></textarea>
+
+            </div>
+
+            <div class="flex gap15 mt30">
+
+                <button class="btn primaryBtn w100" onclick="savePage()">
+
+                    ذخیره تغییرات
+
+                </button>
+
+                <button class="btn secondaryBtn w100" onclick="goBack()">
+
+                    بازگشت
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/routes.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/utils.js"></script>
+
+<script src="js/edit-page.js"></script>
+
+</body>
+
+</html>

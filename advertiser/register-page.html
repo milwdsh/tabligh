@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>ثبت پیج تبلیغاتی | تبلیغینو</title>
+
+<link rel="stylesheet" href="../assets/css/style2.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div id="sidebar"></div>
+
+    <main class="content">
+
+        <div id="header"></div>
+
+        <section class="dashboardSection">
+
+            <div class="card">
+
+                <h2 class="cardTitle">
+
+                    <i class="fa-solid fa-square-plus"></i>
+
+                    ثبت پیج تبلیغاتی
+
+                </h2>
+
+                <div class="inputGroup">
+
+                    <label>نام پیج</label>
+
+                    <input id="pageName" placeholder="نام پیج">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>آیدی اینستاگرام</label>
+
+                    <input id="instagramId" placeholder="@username">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>دسته بندی پیج</label>
+
+                    <input id="category">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>تعداد دنبال کننده</label>
+
+                    <input id="followers" type="number">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>میانگین بازدید استوری</label>
+
+                    <input id="storyViews" type="number">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>میانگین بازدید ریلز</label>
+
+                    <input id="reelViews" type="number">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>قیمت تبلیغ استوری (تومان)</label>
+
+                    <input id="storyPrice" type="number">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>قیمت تبلیغ پست (تومان)</label>
+
+                    <input id="postPrice" type="number">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>قیمت تبلیغ ریلز (تومان)</label>
+
+                    <input id="reelPrice" type="number">
+
+                </div>
+
+                <div class="inputGroup">
+
+                    <label>توضیحات پیج</label>
+
+                    <textarea id="bio" rows="5"></textarea>
+
+                </div>
+
+                <button id="savePage" class="primaryBtn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    ارسال برای بررسی
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/routes.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/utils.js"></script>
+
+<script src="js/register-page.js"></script>
+
+</body>
+
+</html>
