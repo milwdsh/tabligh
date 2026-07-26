@@ -4,249 +4,195 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>داشبورد مشتری | تبلیغینو</title>
 
-
-<link rel="stylesheet" href="assets/css/style.css">
-
+<link rel="stylesheet" href="assets/css/style2.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
 
 </head>
 
-
 <body>
-
 
 <div class="dashboard">
 
+    <div id="sidebar"></div>
 
-<div id="sidebar"></div>
+    <main class="content">
 
-
-
-<main class="content">
-
+        <div id="header"></div>
 
 
-<div id="header"></div>
+<div class="infoBox chatNotice">
 
+<i class="fa-solid fa-comments"></i>
 
-
-
-
-<!-- آمار داشبورد -->
-
-<section class="cards">
-
-
-<div class="cardBox">
-
-<i class="fa-solid fa-bullhorn"></i>
-
-<h2 id="ordersCount">
-0
-</h2>
+<b>
+قابلیت جدید: گفتگو با کاربران
+</b>
 
 <p>
-کل سفارش‌ها
+برای ارتباط سریع‌تر، پیام خصوصی فعال شد.
 </p>
+
+<button 
+class="btn"
+onclick="location.href='messages/messages.html'">
+
+رفتن به پیام‌ها
+
+</button>
+
+</div>
+        <!-- آمار -->
+
+        <section class="dashboardSection">
+
+            <div class="cardGrid dashboardStats customerStats">
+
+                <div class="cardBox">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+
+                    <h2 id="ordersCount">0</h2>
+
+                    <p>کل سفارش‌ها</p>
+                </div>
+
+                <div class="cardBox">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <h2 id="pendingCount">0</h2>
+
+                    <p>در انتظار</p>
+                </div>
+
+                <div class="cardBox">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <h2 id="doneCount">0</h2>
+
+                    <p>تکمیل شده</p>
+                </div>
+
+<div class="cardBox"
+
+onclick="location.href='messages/messages.html'"
+
+style="cursor:pointer">
+
+    <div class="cardIcon">
+
+        <i class="fa-solid fa-comments"></i>
+
+    </div>
+
+    <h2>
+
+        💬
+
+    </h2>
+
+    <p>
+
+        ورود به پیام‌ها
+
+    </p>
+
+    <small>
+
+        مشاهده و ارسال پیام به کاربران
+
+    </small>
 
 </div>
 
+            </div>
 
+        </section>
 
+        <!-- اعلان ها -->
 
-<div class="cardBox">
+        <section class="dashboardSection">
 
-<i class="fa-solid fa-clock"></i>
+            <div id="ticketNotice"></div>
 
-<h2 id="pendingCount">
-0
-</h2>
+            <div id="orderChatNotice"></div>
 
-<p>
-در انتظار
-</p>
+        </section>
+
+        <!-- راهنما -->
+
+        <section class="dashboardSection">
+
+            <div class="card">
+
+                <h2 style="margin-bottom:20px;">
+                    <i class="fa-solid fa-book-open"></i>
+                    راهنمای ثبت سفارش
+                </h2>
+
+                <p>✅ وارد بخش <b>ثبت سفارش</b> شوید.</p>
+
+                <p>✅ پیج موردنظر را انتخاب کنید.</p>
+
+                <p>✅ نوع تبلیغ را انتخاب کنید.</p>
+
+                <p>✅ سفارش را ثبت و پرداخت کنید.</p>
+
+                <p>✅ بعد از تأیید، تبلیغ توسط صاحب پیج انجام می‌شود.</p>
+
+                <p>✅ پس از تأیید سفارش، امکان گفتگو با صاحب پیج از قسمت <b>سفارش‌های من</b> فعال می‌شود.</p>
+
+                <p>✅ در صورت بروز هرگونه مشکل، از بخش <b>تیکت پشتیبانی</b> با ادمین در ارتباط باشید.</p>
+
+                <br>
+
+                <p style="color:#22c55e;">
+                    <i class="fa-solid fa-circle-info"></i>
+                    وضعیت سفارش‌ها همیشه از قسمت «سفارش‌های من» قابل مشاهده است.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- سفارش ها -->
+
+        <section class="dashboardSection">
+
+            <div id="ordersContainer"></div>
+
+        </section>
+
+    </main>
 
 </div>
-
-
-
-
-<div class="cardBox">
-
-<i class="fa-solid fa-circle-check"></i>
-
-<h2 id="doneCount">
-0
-</h2>
-
-<p>
-تکمیل شده
-</p>
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-<!-- اعلان ها -->
-
-<section class="orders">
-
-
-<div id="ticketNotice"></div>
-
-<div id="orderChatNotice"></div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- راهنمای مشتری -->
-
-
-<section class="orders">
-
-
-<div class="cardBox">
-
-
-<h3>
-📌 راهنمای ثبت سفارش
-</h3>
-
-
-
-<p>
-1️⃣ وارد بخش «ثبت سفارش» شوید.
-</p>
-
-
-<p>
-2️⃣ پیج موردنظر را انتخاب کنید.
-</p>
-
-
-<p>
-3️⃣ نوع تبلیغ را انتخاب کنید.
-</p>
-
-
-<p>
-4️⃣ سفارش را ثبت و پرداخت کنید.
-</p>
-
-
-<p>
-5️⃣ بعد از تایید، تبلیغ انجام می‌شود.
-</p>
-
-
-<p>
-6️⃣ بعد از تایید تبلیغ توسط صاحب پیج امکان گفتگو با صاحب پیج فعال میشود از طریق منوی "سفارش های من" میتوانید وارد گفتگو شوید.
- </p>
-
-<p>
-7️⃣ هر مشکلی داشتید از طریق تیکت پشتیبانی به ادمین پیام دهید.
-</p>
-<br>
-
-
-<p>
-💡 وضعیت سفارش‌ها از بخش «سفارش‌های من» قابل مشاهده است.
-</p>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-<!-- لیست سفارش ها -->
-
-
-<section class="orders">
-
-
-<div id="ordersContainer"></div>
-
-
-</section>
-
-
-
-
-
-</main>
-
-
-
-</div>
-
-
-
-
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-
 <script src="assets/js/supabase.js"></script>
-
 
 <script src="assets/js/components.js"></script>
 
-
 <script src="assets/js/utils.js"></script>
-
 
 <script src="assets/js/routes.js"></script>
 
-
 <script src="assets/js/dashboard.js"></script>
 
-
-
 </body>
-
 
 </html>
