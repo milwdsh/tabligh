@@ -4,91 +4,128 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>پشتیبانی | تبلیغینو</title>
 
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style2.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
-
 <body>
-
-
-<div id="header"></div>
-
 
 <div class="content">
 
+<div id="header"></div>
+
+<div class="dashboardCards">
 
 <div class="cardBox">
 
-<h2>🎧 پشتیبانی تبلیغینو</h2>
+<h2>
 
-<br>
+<i class="fa-solid fa-headset"></i>
+
+پشتیبانی تبلیغینو
+
+</h2>
 
 <p>
-در صورت وجود هرگونه مشکل در ثبت سفارش، پرداخت، حساب کاربری یا پنل خود با ما در ارتباط باشید.
+
+در صورت وجود هرگونه مشکل در ثبت سفارش، پرداخت، حساب کاربری یا پنل کاربری، تیم پشتیبانی آماده پاسخگویی به شما است.
+
 </p>
 
+</div>
 
-<br>
+<div class="cardBox">
 
+<h3>
+
+<i class="fa-solid fa-user"></i>
+
+مسئول پشتیبانی
+
+</h3>
 
 <p>
-👤 مسئول پشتیبانی:
-<b>میلاد شاقلانی</b>
+
+میلاد شاقلانی
+
 </p>
 
+</div>
 
-<p>
-📞 شماره تماس:
+<div class="cardBox">
+
+<h3>
+
+<i class="fa-solid fa-phone"></i>
+
+شماره تماس
+
+</h3>
+
+<p dir="ltr">
+
 <a href="tel:09212360325">
+
 09212360325
+
 </a>
+
 </p>
-
-
-<p>
-📧 ایمیل:
-<a href="mailto:milwdsh@gmail.com">
-milwdsh@gmail.com
-</a>
-</p>
-
-<a href="dashboard.html">
-
-<button class="btn">
-داشبورد
-</button>
-
-</a>
-
 
 </div>
 
+<div class="cardBox" style="text-align:center">
+
+<div style="
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+">
+
+<a href="tickets/create-ticket.html" class="btn">
+
+<i class="fa-solid fa-ticket"></i>
+
+ثبت تیکت
+
+</a>
+
+<a href="dashboard.html" class="btn secondary">
+
+<i class="fa-solid fa-gauge"></i>
+
+بازگشت به داشبورد
+
+</a>
 
 </div>
 
+</div>
 
+</div>
+
+</div>
 
 <script src="assets/js/components.js"></script>
-
 
 <script>
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-    loadSidebar();
-
     document.getElementById("header").innerHTML =
-await header("پشتیبانی");
+        await header("پشتیبانی");
 
 });
 
 </script>
-
 
 </body>
 
