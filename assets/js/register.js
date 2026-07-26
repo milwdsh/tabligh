@@ -6,6 +6,11 @@ async function registerUser(){
 
 const name=document.getElementById("name").value.trim();
 
+const username =
+document.getElementById("username").value
+.trim()
+.toLowerCase();
+
 const email=document.getElementById("email").value.trim();
 
 const password=document.getElementById("password").value.trim();
@@ -17,6 +22,46 @@ if(name===""){
 alert("نام را وارد کنید");
 
 return;
+
+}
+
+if(username===""){
+
+alert("آیدی کاربری را وارد کنید");
+
+return;
+
+}
+
+
+if(!/^[a-z0-9_]{4,20}$/.test(username)){
+
+
+alert("آیدی باید بین ۴ تا ۲۰ کاراکتر و فقط شامل حروف انگلیسی، عدد و _ باشد.");
+
+return;
+
+
+}
+
+const {data:existUser} =
+
+await supabaseClient
+
+.from("profiles")
+
+.select("id")
+
+.eq("username",username)
+
+.single();
+
+
+if(existUser){
+
+    alert("این آیدی قبلاً استفاده شده است.");
+
+    return;
 
 }
 
@@ -71,6 +116,8 @@ const {error:profileError}=await supabaseClient
 id:user.id,
 
 name:name,
+
+username:username,
 
 email:user.email,
 
