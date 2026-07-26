@@ -164,11 +164,12 @@ async function loadTicketInfo(){
     }
 
 ticketStatusValue = ticket.status;
+
+
 if(ticket.status === "closed"){
     document.getElementById("messageText").disabled = true;
     document.querySelector(".sendBtn").disabled = true;
 }
-
 
     document.getElementById("ticketInfo").innerHTML=`
 
@@ -188,13 +189,10 @@ if(ticket.status === "closed"){
     </p>
 
 
-    <p>
-
-    وضعیت:
-
-    ${ticket.status==="open" ? "🟢 باز" : "🔴 بسته"}
-
-    </p>
+<p>
+وضعیت:
+${ticketStatus(ticket.status)}
+</p>
 
     `;
 
