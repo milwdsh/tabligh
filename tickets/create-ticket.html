@@ -10,17 +10,11 @@
 <title>ارسال تیکت | تبلیغینو</title>
 
 
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style2.css">
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 
 </head>
@@ -50,7 +44,7 @@
 
 
 
-<section class="orders">
+<section class="dashboardSection">
 
 
 
@@ -62,7 +56,7 @@
 
 <button
 
-class="btn"
+class="secondaryBtn"
 
 onclick="location.href='../dashboard.html'">
 
@@ -71,6 +65,11 @@ onclick="location.href='../dashboard.html'">
 بازگشت به داشبورد
 
 </button>
+
+
+
+
+<br><br>
 
 
 
@@ -86,32 +85,42 @@ onclick="location.href='../dashboard.html'">
 
 
 
+<br>
 
-<p>
+
+
+
+<div class="inputGroup">
+
+
+<label>
 
 موضوع تیکت
 
-</p>
-
+</label>
 
 
 <input
 
 id="subject"
 
-class="input"
-
 placeholder="موضوع را وارد کنید">
 
 
+</div>
 
 
 
-<p>
+
+
+<div class="inputGroup">
+
+
+<label>
 
 متن پیام
 
-</p>
+</label>
 
 
 
@@ -119,14 +128,12 @@ placeholder="موضوع را وارد کنید">
 
 id="message"
 
-class="input"
+rows="6"
 
-style="height:150px"
+placeholder="پیام خود را بنویسید..."></textarea>
 
-placeholder="پیام خود را بنویسید">
 
-</textarea>
-
+</div>
 
 
 
@@ -139,7 +146,7 @@ placeholder="پیام خود را بنویسید">
 
 <button
 
-class="btn"
+class="primaryBtn"
 
 onclick="sendTicket()">
 
