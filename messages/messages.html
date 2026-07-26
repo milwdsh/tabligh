@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>پیام‌ها | تبلیغینو</title>
+
+<link rel="stylesheet" href="../assets/css/style2.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div id="sidebar"></div>
+
+<main class="content">
+
+<div id="header"></div>
+
+<div class="cardBox">
+
+<h2>
+
+<i class="fa-solid fa-comments"></i>
+
+پیام‌ها
+
+</h2>
+
+<br>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;">
+
+<input
+id="searchUsername"
+class="input"
+style="flex:1"
+placeholder="آیدی کاربر (مثلاً milad)">
+
+<button
+class="btn"
+onclick="searchUser()">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+جستجو
+
+</button>
+
+</div>
+
+</div>
+
+<div
+id="searchResult"
+style="margin-top:20px">
+
+</div>
+
+<div class="cardBox" style="margin-top:20px;">
+
+<h3>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+گفتگوهای اخیر
+
+</h3>
+
+</div>
+
+<div
+id="chatList">
+
+<div class="cardBox">
+
+در حال دریافت گفتگوها...
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+
+<script src="../assets/js/routes.js"></script>
+
+<script src="../assets/js/components.js"></script>
+
+<script src="../assets/js/utils.js"></script>
+
+<script src="js/messages.js"></script>
+
+</body>
+
+</html>
