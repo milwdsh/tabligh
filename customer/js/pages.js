@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
+
 async function loadPages(){
 
 
@@ -220,18 +221,6 @@ onclick="choosePage('${page.id}')">
 
 function choosePage(id){
 
-
-localStorage.setItem(
-
-"selectedPage",
-
-id
-
-);
-
-
-
-location.href="order.html";
-
+    location.href = "order.html?page=" + id;
 
 }
