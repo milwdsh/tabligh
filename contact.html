@@ -4,93 +4,125 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>تماس با ما | تبلیغینو</title>
 
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style2.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
-
 <body>
-
-
-<div id="header"></div>
-
 
 <div class="content">
 
+<div id="header"></div>
+
+<div class="dashboardCards">
 
 <div class="cardBox">
 
+<h2>
 
-<h2>📞 تماس با ما</h2>
+<i class="fa-solid fa-headset"></i>
 
-<br>
+تماس با ما
 
+</h2>
 
 <p>
-سایت تبلیغینو جهت ارتباط بین صاحبان پیج‌های تبلیغاتی و مشتریان طراحی شده است.
+
+اگر سوال، پیشنهاد یا مشکلی دارید، از طریق اطلاعات زیر با ما در ارتباط باشید.
+
 </p>
 
+</div>
 
-<br>
+<div class="cardBox">
 
+<h3>
+
+<i class="fa-solid fa-user"></i>
+
+مدیریت
+
+</h3>
 
 <p>
-مدیریت:
-<b>
+
 میلاد شاقلانی
-</b>
+
 </p>
 
+</div>
 
-<p>
-شماره تماس:
-<b>
+<div class="cardBox">
+
+<h3>
+
+<i class="fa-solid fa-phone"></i>
+
+شماره تماس
+
+</h3>
+
+<p dir="ltr">
+
 09212360325
-</b>
+
 </p>
 
+</div>
 
-<p>
-ایمیل:
-<b>
+<div class="cardBox">
+
+<h3>
+
+<i class="fa-solid fa-envelope"></i>
+
+ایمیل
+
+</h3>
+
+<p dir="ltr">
+
 milwdsh@gmail.com
-</b>
+
 </p>
 
+</div>
 
-<br>
+<div class="cardBox" style="text-align:center">
 
+<a href="index.html" class="btn">
 
-<a href="index.html">
+<i class="fa-solid fa-house"></i>
 
-<button class="btn">
-صفحه اصلی
-</button>
+بازگشت به صفحه اصلی
 
 </a>
 
 </div>
 
+</div>
 
 </div>
 
-
-
 <script src="assets/js/components.js"></script>
-
 
 <script>
 
-document.getElementById("header").innerHTML =
-await header("تماس با ما");
+document.addEventListener("DOMContentLoaded", async () => {
+
+    document.getElementById("header").innerHTML =
+        await header("تماس با ما");
+
+});
 
 </script>
-
 
 </body>
 
