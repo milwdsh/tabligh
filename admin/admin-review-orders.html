@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>بررسی تبلیغات انجام شده | تبلیغینو</title>
+
+<link rel="stylesheet" href="../assets/css/style2.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div id="sidebar"></div>
+
+    <main class="content">
+
+        <div id="header"></div>
+
+        <!-- عنوان صفحه -->
+
+        <section class="dashboardSection">
+
+            <div class="card">
+
+                <h2 class="mb10">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    بررسی تبلیغات انجام شده
+
+                </h2>
+
+                <p class="cardText">
+
+                    تبلیغات ثبت‌شده توسط صاحبان پیج را بررسی کنید و در صورت تأیید یا رد، وضعیت سفارش را تغییر دهید.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- لیست سفارش‌ها -->
+
+        <section class="dashboardSection">
+
+            <div id="ordersContainer" class="cardGrid">
+
+                <div class="loading">
+
+                    در حال بارگذاری...
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/routes.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/utils.js"></script>
+
+<script src="js/admin-review-orders.js"></script>
+
+</body>
+
+</html>

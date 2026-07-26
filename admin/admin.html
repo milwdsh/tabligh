@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>داشبورد مدیریت | تبلیغینو</title>
+
+<link rel="stylesheet" href="../assets/css/style2.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div id="sidebar"></div>
+
+    <main class="content">
+
+        <div id="header"></div>
+
+        <!-- کارت‌های آماری -->
+
+        <section class="dashboardSection">
+
+            <div class="cardGrid dashboardStats">
+
+                <div class="cardBox statCard">
+
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <h2 id="usersCount">0</h2>
+
+                    <p>کاربران</p>
+
+                </div>
+
+                <div class="cardBox statCard">
+
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                    <h2 id="ordersCount">0</h2>
+
+                    <p>کل سفارش‌ها</p>
+
+                </div>
+
+                <div class="cardBox statCard">
+
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+
+                    <h2 id="ticketsCount">0</h2>
+
+                    <p>تیکت‌های باز</p>
+
+                </div>
+
+                <div class="cardBox statCard">
+
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+
+                    <h2 id="siteRevenue">0</h2>
+
+                    <p>درآمد سایت</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- اعلان‌ها -->
+
+        <section class="dashboardSection">
+
+            <div id="adminNotice"></div>
+
+        </section>
+
+        <!-- راهنما -->
+
+        <section class="dashboardSection">
+
+            <div class="card">
+
+                <h2 class="mb20">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    راهنمای مدیریت
+                </h2>
+
+                <p>✅ پیج‌های جدید را بررسی و تأیید کنید.</p>
+
+                <p>✅ سفارش‌ها را مدیریت و کنترل کنید.</p>
+
+                <p>✅ تیکت‌های کاربران را پاسخ دهید.</p>
+
+                <p>✅ درخواست‌های تسویه را بررسی و تأیید کنید.</p>
+
+            </div>
+
+        </section>
+
+        <!-- محتوای مدیریت -->
+
+        <section class="dashboardSection">
+
+            <div id="adminContainer"></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+
+<script src="../assets/js/components.js"></script>
+
+<script src="../assets/js/utils.js"></script>
+
+<script src="../assets/js/routes.js"></script>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

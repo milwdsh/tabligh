@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>مدیریت کاربران | تبلیغینو</title>
+
+<link rel="stylesheet" href="../assets/css/style2.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div id="sidebar"></div>
+
+    <main class="content">
+
+        <div id="header"></div>
+
+        <!-- آمار -->
+        <section class="dashboardStats adminStats">
+
+    <div class="cardBox">
+        <i class="fa-solid fa-users"></i>
+        <h2 id="usersCount">0</h2>
+        <p>کل کاربران</p>
+    </div>
+
+    <div class="cardBox">
+        <i class="fa-solid fa-user"></i>
+        <h2 id="customersCount">0</h2>
+        <p>مشتریان</p>
+    </div>
+
+    <div class="cardBox">
+        <i class="fa-solid fa-bullhorn"></i>
+        <h2 id="advertisersCount">0</h2>
+        <p>صاحبان پیج</p>
+    </div>
+
+    <div class="cardBox">
+        <i class="fa-solid fa-user-shield"></i>
+        <h2 id="adminsCount">0</h2>
+        <p>ادمین‌ها</p>
+    </div>
+
+</section>
+
+        <br>
+
+        <!-- جستجو -->
+        <div class="cardBox">
+
+            <div class="inputGroup">
+
+                <label>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    جستجوی کاربران
+                </label>
+
+                <input
+                    id="searchUser"
+                    class="input"
+                    type="text"
+                    placeholder="نام، ایمیل یا شماره موبایل..."
+                    onkeyup="loadUsers()">
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- لیست کاربران -->
+        <div id="usersContainer">
+
+            <div class="cardBox" style="text-align:center;padding:40px;">
+
+                <i class="fa-solid fa-spinner fa-spin"
+                   style="font-size:40px;color:#3b82f6;"></i>
+
+                <br><br>
+
+                در حال دریافت اطلاعات کاربران...
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/routes.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/utils.js"></script>
+
+<script src="js/admin-users.js"></script>
+
+</body>
+
+</html>
