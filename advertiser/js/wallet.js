@@ -166,125 +166,87 @@ async function submitWithdraw() {
 
 }
 
-async function loadTransactions() {
+async function loadTransactions(){
 
-    const box =
-        document.getElementById("transactionsBox");
+    const box = document.getElementById("transactionsBox");
 
-    const { data, error } =
-        await supabaseClient
+    const {data,error} = await supabaseClient
+        .from("transactions")
+        .select("*")
+        .eq("user_id",currentUser.id)
+        .order("created_at",{ascending:false});
 
-            .from("transactions")
-
-            .select("*")
-
-            .eq("user_id", currentUser.id)
-
-            .order("created_at", {
-                ascending: false
-            });
-
-    if (error) {
+    if(error){
 
         console.log(error);
 
-        box.innerHTML = `
-
+        box.innerHTML=`
         <div class="cardBox">
-
-        خطا در دریافت تراکنش‌ها
-
+            خطا در دریافت تراکنش‌ها
         </div>
-
         `;
 
         return;
-
     }
 
-    if (!data || data.length === 0) {
+    if(!data || data.length===0){
 
-        box.innerHTML = `
-
+        box.innerHTML=`
         <div class="cardBox">
-
-        هنوز تراکنشی ثبت نشده است.
-
+            هنوز تراکنشی ثبت نشده است.
         </div>
-
         `;
 
         return;
-
     }
 
-    let html = `
+    let html=`
+
+    <div class="tableResponsive">
 
     <table class="table">
 
-    <thead>
+        <thead>
 
-    <tr>
+            <tr>
 
-    <th>نوع</th>
+                <th>نوع</th>
 
-    <th>مبلغ</th>
+                <th>مبلغ</th>
 
-    <th>وضعیت</th>
+                <th>وضعیت</th>
 
-    <th>توضیح</th>
+                <th>توضیح</th>
 
-    <th>تاریخ</th>
+                <th>تاریخ</th>
 
-    </tr>
+            </tr>
 
-    </thead>
+        </thead>
 
-    <tbody>
+        <tbody>
 
     `;
 
-    data.forEach(t => {
+    data.forEach(t=>{
 
-        html += `
+        html+=`
 
         <tr>
 
-        <td>
+            <td>${transactionType(t.type)}</td>
 
-        ${transactionType(t.type)}
+            <td>
+                <strong>
+                    ${formatPrice(t.amount)} تومان
+                </strong>
+            </td>
 
-        </td>
+            <td>${transactionStatus(t.status)}</td>
 
-        <td>
+            <td>${t.description || "-"}</td>
 
-        <span style="font-weight:bold">
-
-        ${formatPrice(t.amount)}
-
-        تومان
-
-        </span>
-
-        </td>
-
-        <td>
-
-        ${transactionStatus(t.status)}
-
-        </td>
-
-        <td>
-
-        ${t.description || "-"}
-
-        </td>
-
-        <td>
-
-        ${new Date(t.created_at).toLocaleDateString("fa-IR")}
-
-        </td>
+            <td>${new Date(t.created_at).toLocaleDateString("fa-IR")}</td>
 
         </tr>
 
@@ -292,15 +254,17 @@ async function loadTransactions() {
 
     });
 
-    html += `
+    html+=`
 
-    </tbody>
+        </tbody>
 
     </table>
 
+    </div>
+
     `;
 
-    box.innerHTML = html;
+    box.innerHTML=html;
 
 }
 
