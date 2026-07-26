@@ -5,176 +5,401 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>ثبت سفارش تبلیغات</title>
+<title>ثبت سفارش تبلیغات | تبلیغینو</title>
 
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style2.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
+
 
 <body>
 
+
+<div class="dashboard">
+
+
 <div id="sidebar"></div>
 
-<div class="content">
+
+<main class="content">
+
 
 <div id="header"></div>
 
+
+
+<section class="dashboardSection">
+
+
 <div class="cardBox">
 
-<h2>ثبت سفارش تبلیغات</h2>
-
-<br>
-
-<div class="infoBox">
-
-<h3>📢 راهنمای ثبت سفارش</h3>
-
-<p>
-لطفاً اطلاعات پیج خود را کامل وارد کنید.
-</p>
-
-<p>
-پس از ثبت سفارش، درخواست شما برای صاحب پیج ارسال می‌شود.
-</p>
-
-<p>
-تاریخ و ساعت وارد شده صرفاً پیشنهادی است.
-</p>
-
-<p>
-شماره تماس جهت هماهنگی استفاده می‌شود.
-</p>
-
-</div>
-
-<br>
-
-<label>آیدی پیج اینستاگرام شما</label>
-
-<input
-id="customerInstagram"
-class="input"
-placeholder="@username">
-
-<br><br>
-
-<label>لینک پیج (اختیاری)</label>
-
-<input
-id="customerLink"
-class="input"
-placeholder="https://instagram.com/...">
-
-<br><br>
-
-<label>تعداد دنبال‌کننده</label>
-
-<input
-id="customerFollowers"
-class="input"
-type="number">
-
-<br><br>
-
-<label>شماره تماس</label>
-
-<input
-id="customerPhone"
-class="input"
-placeholder="09xxxxxxxxx">
-
-<br><br>
-
-<label>نوع تبلیغ</label>
-
-<select
-id="service"
-class="input">
-
-<option value="story">
-استوری
-</option>
-
-<option value="post">
-پست
-</option>
-
-<option value="reel">
-ریلز
-</option>
-
-</select>
-
-<br><br>
-
-<label>تاریخ پیشنهادی تبلیغ (شمسی)</label>
-
-<input
-id="publishDate"
-class="input"
-placeholder="1405/05/20">
-
-<br><br>
-
-<label>ساعت پیشنهادی</label>
-
-<input
-id="publishTime"
-class="input"
-type="time">
-
-<br><br>
-
-<label>توضیحات سفارش</label>
-
-<textarea
-id="customerNote"
-class="input"
-rows="5"
-placeholder="توضیحات مورد نیاز..."></textarea>
-
-<br><br>
-
-<h3>
-
-مبلغ سفارش:
-
-<span id="priceBox">
-
----
-
-</span>
-
-تومان
-
-</h3>
-
-<br>
 
 <button
-class="btn"
-onclick="submitOrder()">
+class="btn secondary"
+onclick="history.back()">
 
-ثبت سفارش
+<i class="fa-solid fa-arrow-right"></i>
+
+بازگشت
 
 </button>
 
-</div>
+
+<br><br>
+
+
+
+<h2>
+
+📢 ثبت سفارش تبلیغات
+
+</h2>
+
+
+
+<br>
+
+
+
+<div id="pageInfoBox" class="infoBox">
+
+در حال دریافت اطلاعات پیج...
 
 </div>
+
+
+
+<br>
+
+
+
+<div class="infoBox">
+
+
+<h3>
+
+📌 راهنمای سفارش
+
+</h3>
+
+
+<p>
+
+بعد از ثبت سفارش، درخواست شما برای صاحب پیج ارسال می‌شود.
+
+</p>
+
+
+<p>
+
+زمان انتشار تبلیغ توسط شما پیشنهاد داده می‌شود.
+
+</p>
+
+
+<p>
+
+شماره تماس برای هماهنگی استفاده خواهد شد.
+
+</p>
+
+
+</div>
+
+
+
+<br>
+
+
+
+<h3>
+
+اطلاعات پیج شما
+
+</h3>
+
+
+
+<div class="inputGroup">
+
+
+<label>
+
+آیدی پیج اینستاگرام شما
+
+</label>
+
+
+<input
+
+id="customerInstagram"
+
+placeholder="@username">
+
+</div>
+
+
+
+
+<div class="inputGroup">
+
+
+<label>
+
+لینک پیج (اختیاری)
+
+</label>
+
+
+<input
+
+id="customerLink"
+
+placeholder="https://instagram.com/...">
+
+</div>
+
+
+
+
+<div class="inputGroup">
+
+
+<label>
+
+تعداد دنبال کننده
+
+</label>
+
+
+<input
+
+id="customerFollowers"
+
+type="number"
+
+placeholder="مثلا 10000">
+
+</div>
+
+
+
+
+<div class="inputGroup">
+
+
+<label>
+
+شماره تماس
+
+</label>
+
+
+<input
+
+id="customerPhone"
+
+placeholder="09xxxxxxxxx">
+
+</div>
+
+
+
+
+<br>
+
+
+
+<h3>
+
+نوع تبلیغ
+
+</h3>
+
+
+
+<div class="inputGroup">
+
+
+<select id="service">
+
+
+<option value="story">
+
+استوری
+
+</option>
+
+
+<option value="post">
+
+پست
+
+</option>
+
+
+<option value="reel">
+
+ریلز
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+<div class="inputGroup">
+
+
+<label>
+
+تاریخ پیشنهادی انتشار
+
+</label>
+
+
+<input
+
+id="publishDate"
+
+placeholder="1405/05/20">
+
+</div>
+
+
+
+
+<div class="inputGroup">
+
+
+<label>
+
+ساعت پیشنهادی انتشار
+
+</label>
+
+
+<input
+
+id="publishTime"
+
+type="time">
+
+</div>
+
+
+
+
+<div class="inputGroup">
+
+
+<label>
+
+توضیحات سفارش
+
+</label>
+
+
+<textarea
+
+id="customerNote"
+
+rows="5"
+
+placeholder="توضیحات خود را بنویسید..."></textarea>
+
+
+</div>
+
+
+
+
+<br>
+
+
+
+<div class="priceCard">
+
+
+<h3>
+
+💰 مبلغ سفارش:
+
+</h3>
+
+
+<div id="priceBox">
+
+در حال محاسبه...
+
+</div>
+
+
+</div>
+
+
+
+<br>
+
+
+
+
+<button
+
+class="primaryBtn"
+
+onclick="submitOrder()">
+
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+
+ثبت نهایی سفارش
+
+
+</button>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+</main>
+
+
+</div>
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="../assets/js/supabase.js"></script>
+
 <script src="../assets/js/routes.js"></script>
+
 <script src="../assets/js/components.js"></script>
+
 <script src="../assets/js/utils.js"></script>
 
 <script src="js/order.js"></script>
+
+
 
 </body>
 
